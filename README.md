@@ -1,1 +1,1 @@
-# lab
+### DevOps lab course outline
