@@ -545,6 +545,260 @@ CKA
 AWS EKS
 ```
 
+Yes, but **not deeply enough** if your goal is **DevOps and troubleshooting**. Linux automation deserves its own phase because much of a DevOps engineer's work is automating repetitive tasks.
+
+I'd expand the roadmap like this:
+
+# Phase 9: Shell Scripting (Basic Automation)
+
+Learn:
+
+* Variables
+* Conditionals
+* Loops
+* Functions
+* Exit codes
+* Arguments
+* Error handling
+
+### Labs
+
+* Backup script
+* Disk usage checker
+* Log analyzer
+* User creation script
+
+---
+
+# Phase 10: Linux Automation (Intermediate)
+
+## Cron Jobs
+
+```bash
+crontab -e
+```
+
+Learn:
+
+* Schedule syntax
+* Environment variables
+* Logging cron jobs
+
+### Lab
+
+Daily backup at midnight.
+
+---
+
+## systemd Timers
+
+Modern replacement for cron.
+
+### Lab
+
+Run cleanup script every hour.
+
+---
+
+## File Synchronization
+
+```bash
+rsync
+```
+
+### Lab
+
+Backup `/home` to another directory.
+
+---
+
+## Text Automation
+
+Tools:
+
+* grep
+* awk
+* sed
+* xargs
+
+### Lab
+
+Find and compress old logs:
+
+```bash
+find /var/log -name "*.log" | xargs gzip
+```
+
+---
+
+## Batch Operations
+
+Create 100 users:
+
+```bash
+for i in {1..100}; do
+    useradd user$i
+done
+```
+
+---
+
+## Monitoring Scripts
+
+Write scripts to check:
+
+* CPU
+* Memory
+* Disk
+* Services
+
+### Lab
+
+If nginx is down:
+
+```bash
+systemctl restart nginx
+```
+
+---
+
+## Log Rotation
+
+Learn:
+
+```bash
+logrotate
+```
+
+### Lab
+
+Rotate logs daily.
+
+---
+
+# Phase 16: Advanced Automation
+
+## SSH Automation
+
+```bash
+ssh
+scp
+rsync
+```
+
+Run commands remotely:
+
+```bash
+ssh server "uptime"
+```
+
+---
+
+## Parallel Execution
+
+```bash
+xargs -P
+```
+
+---
+
+## Expect Scripts
+
+Automate interactive commands.
+
+---
+
+## Configuration Management (Very Important)
+
+After Linux basics:
+
+* Bash automation
+* Then **Ansible** ⭐⭐⭐⭐⭐
+
+Learn:
+
+* Inventory
+* Playbooks
+* Variables
+* Roles
+* Templates
+
+### Labs
+
+Automate:
+
+* User creation
+* Package installation
+* Nginx deployment
+* Multiple servers
+
+---
+
+# Real DevOps Automation Projects
+
+### Server Health Monitor
+
+Checks:
+
+* CPU
+* RAM
+* Disk
+
+Writes logs and sends alerts.
+
+---
+
+### Auto Backup System
+
+Daily backup with cron.
+
+---
+
+### Log Cleanup Service
+
+Delete logs older than 30 days.
+
+---
+
+### Auto-Heal Nginx
+
+If nginx crashes:
+
+* Restart service
+* Write log
+* Send notification
+
+---
+
+### Provision New Servers
+
+Using Ansible:
+
+```yaml
+Install nginx
+Create users
+Configure firewall
+Deploy app
+```
+
+---
+
+For a **DevOps engineer**, I would consider these skills mandatory:
+
+1. Linux fundamentals
+2. Troubleshooting
+3. Bash scripting
+4. Cron/systemd timers
+5. Text processing (grep, awk, sed)
+6. SSH and rsync
+7. Ansible ⭐⭐⭐⭐⭐
+8. Containers (Docker)
+9. Kubernetes
+10. CI/CD
+
+So yes, automation should be a major part of the roadmap, not just a small section.
+
+
 If we're doing this together, I would teach it as a **20-week lab-driven course**, where every topic includes:
 
 1. Theory (20%)
